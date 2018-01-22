@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ObservableTestComponent } from '../pages/observable-test/observable-test.component';
-
+import { ObservableTestComponent } from './observable-test/observable-test.component';
+import { Page404Component } from './page-404/page-404.component';
+import { ObservableTest1Component } from './observable-test1/observable-test1.component';
 
 const routes1: Routes = [
   {
@@ -9,12 +10,21 @@ const routes1: Routes = [
     children: []
   },
   {path: 'Observable', component: ObservableTestComponent },
-   {path: 'MyObserver', loadChildren: '../pages/my-observer/my-observer.module#MyObserverModule'},
-   {path: 'MyobeserverRedirect', pathMatch: 'full', redirectTo: 'MyObserver'}
+ // {path: 'MySubject', component: MySubjectComponent, outlet: 'MySubject1' },
+   {path: 'Observer', loadChildren: '../pages/observer.module#ObserverModule'},
+   {path: 'MyObeserverRedirect', pathMatch: 'full', redirectTo: 'Observer'},
+   // {path: '**', component: Page404Component }
+];
+
+// 配置路由数组
+const rootRouterConfig: Routes = [
+  {path: 'ObservableTest', outlet: 'test', component: ObservableTestComponent },
+  {path: 'ObservableTest', outlet: 'test1', component: ObservableTest1Component },
+  {path: 'Page404', component: Page404Component }
 ];
 export const routes = routes1;
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(rootRouterConfig)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

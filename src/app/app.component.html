@@ -7,9 +7,14 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
-  <!--<li *ngFor="let route of getEnableNavitem()" routerLink="/{{route.component}}" routerLinkActive='active'>{{route.path}}</li>-->
-  <li routerLink="Observable" routerLinkActive="active" >观察者</li>
-  <li routerLink="MyObserver" routerLinkActive="active" >我的观察者1</li>
-  <li routerLink="MyobeserverRedirect" routerLinkActive="active" >另一个的观察者</li>
+  <!--<li *ngFor="let route of getEnableNavitem()" routerLink="/{{route.component}}" routerLinkActive='active'>{{route.path}}</li>
+    
+
+  <li routerLink="Observable" routerLinkActive="active" >观察者Test</li>
+  <li routerLink="Observer/MySubject" routerLinkActive="active" >我的项目</li>
+  <li routerLink="MyObeserverRedirect" routerLinkActive="active" >我的主题Redirect</li>  -->
 </ul>
 <router-outlet></router-outlet>
+<li routerLink="ObservableTest" routerLinkActive="active" >观察者Test01</li>
+<router-outlet name='test'></router-outlet>
+<router-outlet name='test1'></router-outlet>
