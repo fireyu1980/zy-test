@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
+
+import { RxjsObsService } from '../rxjs-obs.service';
 
 @Component({
   selector: 'app-my-observer',
@@ -7,8 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyObserverComponent implements OnInit {
 
-  constructor() { }
+  userInfo;
+  constructor(private rxjsobsService: RxjsObsService) {
+    // this.rxjsobsService.getUserInfo(1).subscribe(data => {
+     // console.log(data);
+   // });
+  }
 
   ngOnInit() {
+    console.log('ngOnInit');
+    this.userInfo = this.rxjsobsService.getUserInfo(1).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  getUserInfo() {
+    this.rxjsobsService.getUserInfo(1).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy');
+    this.userInfo.unsubscribe();
   }
 }

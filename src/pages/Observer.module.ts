@@ -4,6 +4,7 @@ import { RouterModule} from '@angular/router';
 import { MyObserverComponent } from '../pages/my-observer/my-observer.component';
 import { MySubjectComponent } from '../pages/my-subject/my-subject.component';
 import { MySubject001Component } from '../pages/my-subject-001/my-subject-001.component';
+import { RxjsObsService } from './rxjs-obs.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -21,6 +22,7 @@ import { MySubject001Component } from '../pages/my-subject-001/my-subject-001.co
       },
     ])
   ],
-  declarations: [MyObserverComponent, MySubjectComponent, MySubject001Component]
+  declarations: [MyObserverComponent, MySubjectComponent, MySubject001Component],
+  providers: [RxjsObsService]
 })
 export class ObserverModule { }
