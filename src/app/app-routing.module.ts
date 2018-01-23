@@ -18,13 +18,16 @@ const routes1: Routes = [
 
 // 配置路由数组
 const rootRouterConfig: Routes = [
+  {
+    path: '',
+    children: []
+  },
   {path: 'ObservableTest', outlet: 'test', component: ObservableTestComponent },
-  {path: 'ObservableTest', outlet: 'test1', component: ObservableTest1Component },
-  {path: 'Page404', component: Page404Component }
+  {path: 'ObservableTest', outlet: 'test1', component: ObservableTest1Component }
 ];
 export const routes = routes1;
 @NgModule({
-  imports: [RouterModule.forRoot(rootRouterConfig)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
