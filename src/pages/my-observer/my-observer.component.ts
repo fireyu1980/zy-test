@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy} from '@angular/core';
 
 import { RxjsObsService } from '../rxjs-obs.service';
 
+
 @Component({
   selector: 'app-my-observer',
   templateUrl: './my-observer.component.html',

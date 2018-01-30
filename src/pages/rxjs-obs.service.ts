@@ -7,6 +7,7 @@ import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
 export class RxjsObsService {
+  http: Http;
   departmentsMock: Array<any>= [
     {depId: 1, name: '管理部', createdAt: new Date(), updatedAt: new Date()},
     {depId: 3, name: '事业部', createdAt: new Date(), updatedAt: new Date()},
@@ -16,7 +17,7 @@ export class RxjsObsService {
   ];
 
   departmentMock: Department= {depId: 1, name: '管理部', createdAt: new Date(), updatedAt: new Date()};
-  constructor(private http: Http) {
+  constructor() {
 
   }
 
