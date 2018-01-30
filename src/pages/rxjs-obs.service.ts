@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import { of } from 'rxjs/observable/of';
 import { from } from 'rxjs/observable/from';
+import { fromEvent } from 'rxjs/observable/fromevent';
 import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()

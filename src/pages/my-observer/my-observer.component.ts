@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy} from '@angular/core';
 
 import { RxjsObsService } from '../rxjs-obs.service';
-
+import { fromEvent } from 'rxjs/observable/fromevent';
 
 @Component({
   selector: 'app-my-observer',
@@ -22,6 +22,7 @@ export class MyObserverComponent implements OnInit {
     this.userInfo = this.rxjsobsService.getUserInfo(1).subscribe(data => {
       console.log(data);
     });
+    //var click = fromEvent(this, 'click');
   }
 
   getUserInfo() {
